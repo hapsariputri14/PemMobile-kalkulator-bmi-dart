@@ -11,21 +11,23 @@ void main() {
 }
 
 void hitungBMI(double tinggiCm, double beratKg, List<Map<String, dynamic>> riwayat) {
-  // Fase 2: BMI Calculation
-  double tinggiM = tinggiCm / 100;
-  double bmi = beratKg / (tinggiM * tinggiM);
+  // Fase 3: History Feature
+  riwayat.add({
+    'tinggi': tinggiCm,
+    'berat': beratKg,
+    'bmi': 0, // placeholder, nanti terisi saat digabung dengan bmi-calculation
+    'kategori': "", // placeholder
+  });
+}
 
-  String kategori;
-  if (bmi < 18.5) {
-    kategori = "Kurus";
-  } else if (bmi < 25) {
-    kategori = "Normal";
-  } else if (bmi < 30) {
-    kategori = "Gemuk";
-  } else {
-    kategori = "Obesitas";
+void tampilkanRiwayat(List<Map<String, dynamic>> riwayat) {
+  for (var data in riwayat) {
+    print("Tinggi: ${data['tinggi']} cm, Berat: ${data['berat']} kg, "
+          "BMI: ${data['bmi']}, Kategori: ${data['kategori']}");
   }
 }
+
+
 
 
 
