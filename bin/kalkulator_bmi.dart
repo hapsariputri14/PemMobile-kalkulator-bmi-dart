@@ -1,0 +1,20 @@
+import 'package:pemmobile_kalkulator_bmi_dart/pemmobile_kalkulator_bmi_dart.dart' as pemmobile_kalkulator_bmi_dart;
+
+// Fase 1: Input Validation
+void main() {
+  List<Map<String, dynamic>> riwayat = [];
+  hitungBMI(170, 65, riwayat);
+  hitungBMI(165, 75, riwayat);
+  hitungBMI(180, 85, riwayat);
+
+  tampilkanRiwayat(riwayat);
+}
+
+void hitungBMI(double tinggiCm, double beratKg, List<Map<String, dynamic>> riwayat) {
+  // input-validation
+  if (tinggiCm <= 0 || beratKg <= 0) {
+    print("Input tidak valid: tinggi=$tinggiCm, berat=$beratKg");
+    return;
+  }
+}
+
